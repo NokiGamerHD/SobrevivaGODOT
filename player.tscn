@@ -35,7 +35,7 @@ animations = [{
 radius = 27.0
 height = 68.0
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Area2D"]
 script = ExtResource("1_sweqy")
 metadata/_edit_group_ = true
 
@@ -43,8 +43,10 @@ metadata/_edit_group_ = true
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n7ghd")
 animation = &"right"
-frame_progress = 0.0722319
+frame_progress = 0.0152767
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_nvl01")
 debug_color = Color(0.984173, 0.110522, 0.13791, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
